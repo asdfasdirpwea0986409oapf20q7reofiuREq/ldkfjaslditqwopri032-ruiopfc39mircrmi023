@@ -2,16 +2,16 @@ import json
 import os
 
 with open("database/tools/schema.json", "r") as file:
-    schema = json.load(file)
+    data = json.load(file)
 
 def users():
-    return schema["users"]
+    return data["users"]
 
 def tackboards():
-    return schema["tackboards"]
+    return data["tackboards"]
 
 def questions():
-    return schema["questions"]
+    return data["questions"]
 
 def answers():
-    return schema["answers"]
+    return data["answers"]

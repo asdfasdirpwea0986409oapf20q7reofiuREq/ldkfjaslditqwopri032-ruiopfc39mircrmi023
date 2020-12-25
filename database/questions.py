@@ -1,6 +1,6 @@
 import sqlite3
-import tools.schema as schema
-import tools.utils as utils
+import database.tools.schema as schema
+import database.tools.utils as utils
 import os
 
 schemaJSON = schema.questions()
