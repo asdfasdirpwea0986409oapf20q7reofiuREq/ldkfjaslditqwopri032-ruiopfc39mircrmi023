@@ -1,0 +1,41 @@
+{
+    "users" : {
+        "id" : "integer",
+        "created" : "text",
+        "username" : "text",
+        "name" : "text",
+        "email" : "text",
+        "asked" : "integer",
+        "answered" : "integer"
+    },
+    "tackboards" : {
+        "id" : "integer",
+        "name" : "text",
+        "subject" : "text",
+        "description" : "text",
+        "public" : "integer",
+        "ownerID" : "integer",
+        "created" : "text",
+        "memberIDs" : "text",
+        "questionIDs" : "text",
+        "answerIDs" : "text"
+    },
+    "questions" : {
+        "id" : "integer",
+        "authorID" : "integer",
+        "upvotes" : "integer",
+        "downvotes" : "integer",
+        "answeredMemberIDs": "text",
+        "created" : "text",
+        "question" : "text"
+    },
+    "answers" : {
+        "id" : "integer",
+        "questionID" : "integer",
+        "authorID": "integer",
+        "upvotes" : "integer",
+        "downvotes" : "integer",
+        "created" : "text",
+        "answer" : "text"
+    }
+}
