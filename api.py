@@ -9,7 +9,7 @@ app = Flask("Tackboard API")
 
 def log(severity, content):
     with open("error.log", "a+") as errorLog:
-        line = f"\n{str(datetime.datetime.now())} | [{severity.upper()}] {content}"
+        line = f"\n{str(datetime.datetime.now())} | [{severity.upper()}] {content} | Made by {request.remote_addr}"
         errorLog.write(line)
 
 def error(exception):
