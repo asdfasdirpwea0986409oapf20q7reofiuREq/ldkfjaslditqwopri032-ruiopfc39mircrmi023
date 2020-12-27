@@ -12,7 +12,7 @@ def log(severity, content):
         line = f"\n{str(datetime.datetime.now())} | [{severity.upper()}] {content} | Made by {request.remote_addr}"
         errorLog.write(line)
 
-def error(exception):
+def error():
     execptionType, _, exceptionTB = sys.exc_info()
     filename = os.path.split(exceptionTB.tb_frame.f_code.co_filename)[1]
     execptionType = str(execptionType).strip("<class '").strip("'>")
@@ -71,8 +71,8 @@ def users():
         abort(406)
     except TypeError: # user did not pass in id in url for retrieve method
         abort(406)
-    except Exception as exception: # something went wrong in this function
-        return error(exception)
+    except: # something went wrong in this function
+        return error()
 
 @app.route("/tackboards", methods = ["POST", "GET", "POST", "DELETE"])
 def tackboards():
@@ -100,8 +100,8 @@ def tackboards():
         abort(406)
     except TypeError: # user did not pass in id in url for retrieve method
         abort(406)
-    except Exception as exception: # something went wrong in this function
-        return error(exception)
+    except: # something went wrong in this function
+        return error()
 
 @app.route("/questions", methods = ["POST", "GET", "POST", "DELETE"])
 def questions():
@@ -129,8 +129,8 @@ def questions():
         abort(406)
     except TypeError: # user did not pass in id in url for retrieve method
         abort(406)
-    except Exception as exception: # something went wrong in this function
-        return error(exception)
+    except: # something went wrong in this function
+        return error()
 
 @app.route("/answers", methods = ["POST", "GET", "POST", "DELETE"])
 def answers():
@@ -158,8 +158,8 @@ def answers():
         abort(406)
     except TypeError: # user did not pass in id in url for retrieve method
         abort(406)
-    except Exception as exception: # something went wrong in this function
-        return error(exception)
+    except: # something went wrong in this function
+        return error()
 
 if __name__ == "__main__":
     app.run(debug = True)
