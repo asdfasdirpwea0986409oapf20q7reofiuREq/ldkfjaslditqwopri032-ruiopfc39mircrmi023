@@ -5,6 +5,7 @@
 - username > text
 - name > text
 - email > text
+- friend ids > text (python list serialized into json)
 - asked > integer
 - answered > integer
 ## tackboards

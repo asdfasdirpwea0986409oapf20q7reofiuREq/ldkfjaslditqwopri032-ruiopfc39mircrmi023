@@ -5,6 +5,7 @@
         "username" : "text",
         "name" : "text",
         "email" : "text",
+        "friendIDs" : "text",
         "asked" : "integer",
         "answered" : "integer"
     },
