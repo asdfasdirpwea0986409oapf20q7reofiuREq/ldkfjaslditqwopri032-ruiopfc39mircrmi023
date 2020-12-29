@@ -9,6 +9,6 @@ post = {"data" : [0, "Tackboard's Tackboard", "Education", "The first one here!"
 put = {"id" : 0, "column" : "public", "new" : 1}
 delete = {"id" : 0}
 
-response = requests.delete(local, json = json.dumps(delete)).text
+response = requests.post(online, json = json.dumps(post)).text
 
 print(response)

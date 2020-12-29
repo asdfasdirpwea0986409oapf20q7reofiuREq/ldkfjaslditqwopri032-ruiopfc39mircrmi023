@@ -23,7 +23,9 @@ def create(connection, values):
             connection.commit()
             break
         except sqlite3.IntegrityError:
+            values = list(values)
             values[0] +=1
+            values = tuple(values)
             continue
 
 def retrieve(connection):
