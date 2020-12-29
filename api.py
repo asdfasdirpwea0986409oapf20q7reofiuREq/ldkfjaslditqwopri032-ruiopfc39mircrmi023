@@ -45,7 +45,7 @@ def getErrors():
         data = errorLog.read()
     return f"<pre>{data}</pre>"
 
-@app.route("/users", methods = ["POST", "GET", "POST", "DELETE"])
+@app.route("/users", methods = ["POST", "GET", "PUT", "DELETE"])
 def users():
     connection = database.users.connect()
     method = request.method
@@ -67,14 +67,15 @@ def users():
             return jsonify({"message" : "success"})
         elif method == "DELETE":
             database.users.delete(connection, values["id"])
+            return jsonify({"message" : "success"})
     except KeyError: # user did not pass in necessary data 
         abort(406)
-    except TypeError: # user did not pass in id in url for retrieve method
+    except TypeError: # cannot convert the data user passed into the nessesary type
         abort(406)
     except: # something went wrong in this function
         return error()
 
-@app.route("/tackboards", methods = ["POST", "GET", "POST", "DELETE"])
+@app.route("/tackboards", methods = ["POST", "GET", "PUT", "DELETE"])
 def tackboards():
     connection = database.tackboards.connect()
     method = request.method
@@ -96,14 +97,15 @@ def tackboards():
             return jsonify({"message" : "success"})
         elif method == "DELETE":
             database.tackboards.delete(connection, values["id"])
+            return jsonify({"message" : "success"})
     except KeyError: # user did not pass in necessary data 
         abort(406)
-    except TypeError: # user did not pass in id in url for retrieve method
+    except TypeError: # cannot convert the data user passed into the nessesary type
         abort(406)
     except: # something went wrong in this function
         return error()
 
-@app.route("/questions", methods = ["POST", "GET", "POST", "DELETE"])
+@app.route("/questions", methods = ["POST", "GET", "PUT", "DELETE"])
 def questions():
     connection = database.questions.connect()
     method = request.method
@@ -125,14 +127,15 @@ def questions():
             return jsonify({"message" : "success"})
         elif method == "DELETE":
             database.questions.delete(connection, values["id"])
+            return jsonify({"message" : "success"})
     except KeyError: # user did not pass in necessary data 
         abort(406)
-    except TypeError: # user did not pass in id in url for retrieve method
+    except TypeError: # cannot convert the data user passed into the nessesary type
         abort(406)
     except: # something went wrong in this function
         return error()
 
-@app.route("/answers", methods = ["POST", "GET", "POST", "DELETE"])
+@app.route("/answers", methods = ["POST", "GET", "PUT", "DELETE"])
 def answers():
     connection = database.answers.connect()
     method = request.method
@@ -154,11 +157,13 @@ def answers():
             return jsonify({"message" : "success"})
         elif method == "DELETE":
             database.answers.delete(connection, values["id"])
+            return jsonify({"message" : "success"})
     except KeyError: # user did not pass in necessary data 
         abort(406)
-    except TypeError: # user did not pass in id in url for retrieve method
+    except TypeError: # cannot convert the data user passed into the nessesary type
         abort(406)
-    except: # something went wrong in this function
+    except Exception as e: # something went wrong in this function
+        print(e)
         return error()
 
 if __name__ == "__main__":
