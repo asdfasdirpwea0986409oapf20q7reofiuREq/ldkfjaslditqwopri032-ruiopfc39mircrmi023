@@ -26,6 +26,7 @@
         "authorID" : "integer",
         "upvotes" : "integer",
         "downvotes" : "integer",
+        "upvotedMemberIDs" : "text",
         "answeredMemberIDs": "text",
         "created" : "text",
         "question" : "text"

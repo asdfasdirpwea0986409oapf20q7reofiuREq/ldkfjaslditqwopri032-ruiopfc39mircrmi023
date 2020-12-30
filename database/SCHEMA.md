@@ -5,7 +5,6 @@
 - username > text
 - name > text
 - email > text
-- friend ids > text (python list serialized into json)
 - asked > integer
 - answered > integer
 ## tackboards
@@ -24,6 +23,7 @@
 - author id > text
 - upvotes > integer
 - downvotes > integer
+- upvoted member ids > text (python list serialized into json)
 - answered member ids > text (python list serialized into json; has all if public, empty if nobody is member)
 - created > text (datetime object)
 - question > text

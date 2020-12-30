@@ -9,6 +9,6 @@ post = {"data" : [0, 0, 0, 10, 0, str(datetime.datetime.now().strftime(r"%m/%d/%
 put = {"id" : 0, "column" : "upvotes", "new" : 11}
 delete = {"id" : 0}
 
-response = requests.post(local, json = json.dumps(post)).text
+response = requests.post(online, json = json.dumps(post)).text
 
 print(response)

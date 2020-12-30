@@ -38,9 +38,8 @@ def retrieve(connection):
         entry["username"] = row[2]
         entry["name"] = row[3]
         entry["email"] = row[4]
-        entry["friendIDs"] = row[5]
-        entry["asked"] = row[6]
-        entry["answered"] = row[7]
+        entry["asked"] = row[5]
+        entry["answered"] = row[6]
         output.append(entry)
     return output
 
