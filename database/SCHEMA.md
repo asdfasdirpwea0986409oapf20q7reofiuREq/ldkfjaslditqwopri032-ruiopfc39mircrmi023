@@ -33,5 +33,6 @@
 - author id > integer
 - upvotes > integer
 - downvotes > integer
+- upvoted member ids > text (python list serialized into json)
 - created > text (datetime object)
 - answer > text

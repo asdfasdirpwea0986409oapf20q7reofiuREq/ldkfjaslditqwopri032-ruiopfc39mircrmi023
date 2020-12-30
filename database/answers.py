@@ -38,8 +38,9 @@ def retrieve(connection):
         entry["authorID"] = row[2]
         entry["upvotes"] = row[3]
         entry["downvotes"] = row[4]
-        entry["created"] = row[5]
-        entry["answer"] = row[6]
+        entry["upvotedMemberIDs"] = row[5]
+        entry["created"] = row[6]
+        entry["answer"] = row[7]
         output.append(entry)
     return output
 
